@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Txou</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="izenburua">TXOU!</string>
+    <string name="title_activity_ropa">Ropa</string>
+    <string name="title_activity_comida">Comida</string>
+    <string name="title_activity_juegos">Juegos</string>
+    <string name="title_activity_medico">Medico</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+</resources>

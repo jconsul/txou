@@ -29,11 +29,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/kargatzen"
+            android:text="@string/kargatzen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/letraTitulos"/>
+    <ProgressBar
+        android:id="@+id/pbarProgreso"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:max="100" />
+
     <Button
         android:id="@+id/botonEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sartu"
+        android:visibility="invisible"
         android:layout_gravity="center"
         android:onClick="entrar"/>
 

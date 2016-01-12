@@ -3,6 +3,7 @@ package es.tta.txou;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,10 +17,15 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
+    private Button btnAsyncTask;
+    private ProgressBar pbarProgreso;
+    private MiTareaAsincrona tarea1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        pbarProgreso = (ProgressBar)findViewById(R.id.pbarProgreso);
+        tarea1 = new MiTareaAsincrona();
+        tarea1.execute();
 
     }
 
@@ -85,6 +94,50 @@ public class MainActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this,MenuActivity.class);
         startActivity(intent);
+    }
+    private void tareaLarga()
+    {
+        try {
+            Thread.sleep(1000);
+        } catch(InterruptedException e) {}
+    }
+    private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            for(int i=1; i<=10; i++) {
+                tareaLarga();
+                publishProgress(i*1);
+                if(isCancelled())
+                    break;
+            }
+            return true;
+        }
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            int progreso = values[0].intValue();
+            pbarProgreso.setProgress(progreso);
+        }
+        @Override
+        protected void onPreExecute() {
+            pbarProgreso.setMax(10);
+            pbarProgreso.setProgress(0);
+        }
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if(result) {
+               // Toast.makeText(MainActivity.this, "Tarea finalizada!", Toast.LENGTH_SHORT).show();
+                Button btn = (Button)findViewById(R.id.botonEntrar);
+                btn.setVisibility(View.VISIBLE);
+                pbarProgreso.setVisibility(View.INVISIBLE);
+                TextView text= (TextView)findViewById(R.id.kargatzen);
+                text.setVisibility(View.INVISIBLE);
+            }
+
+        }
+        @Override
+        protected void onCancelled() {
+            Toast.makeText(MainActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

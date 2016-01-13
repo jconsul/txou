@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
     private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {
-            for(int i=1; i<=10; i++) {
+            for(int i=1; i<=5; i++) {
                 tareaLarga();
                 publishProgress(i*1);
                 if(isCancelled())
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity
         }
         @Override
         protected void onPreExecute() {
-            pbarProgreso.setMax(10);
+            pbarProgreso.setMax(5);
             pbarProgreso.setProgress(0);
         }
         @Override

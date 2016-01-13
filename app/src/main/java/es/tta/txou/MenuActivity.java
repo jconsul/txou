@@ -11,9 +11,16 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+=======
+import android.widget.AbsListView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+>>>>>>> origin/master
 
 public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;

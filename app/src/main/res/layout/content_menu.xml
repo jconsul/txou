@@ -24,34 +24,104 @@
             android:textColor="@color/letraTitulos"/>
 
 
-  <!--      <LinearLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/botonesMenu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="juegos"
-                android:text="a"/>
-            <Button
+                android:src="@drawable/juegos"
+                android:layout_weight=".25"/>
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="comida"
-                android:text="b"/>
-            <Button
+                android:src="@drawable/comida"
+                android:layout_weight=".25"/>
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="medico"
-                android:text="c"/>
-            <Button
+                android:src="@drawable/medico"
+                android:layout_weight=".25"/>
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="ropa"
-                android:text="d"/>
+                android:src="@drawable/ropa"
+                android:layout_weight=".25"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Jokuak      "
+                android:gravity="center"
+                android:layout_weight=".25"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Janaria      "
+                android:gravity="center"
+                android:layout_weight=".25"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Medikua      "
+                android:gravity="center"
+                android:layout_weight=".25"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Arropa      "
+                android:gravity="center"
+                android:layout_weight=".25"/>
         </LinearLayout>
 
--->
+        <ImageView
+            android:id="@+id/txou_normal"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image1"/>
+
+
+
+        <!--      <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:onClick="juegos"
+                      android:text="a"/>
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:onClick="comida"
+                      android:text="b"/>
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:onClick="medico"
+                      android:text="c"/>
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:onClick="ropa"
+                      android:text="d"/>
+              </LinearLayout>
+
+      -->
     </LinearLayout>
 
 

@@ -15,9 +15,9 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tituloPagina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MENUA"
             android:gravity="center"
             android:textSize="35dp"
             android:textStyle="bold"
@@ -31,31 +31,28 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/botonesMenu1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="juegos"
-                android:src="@drawable/juegos"
                 android:layout_weight=".25"/>
             <ImageButton
+                android:id="@+id/botonesMenu2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="comida"
-                android:src="@drawable/comida"
                 android:layout_weight=".25"/>
             <ImageButton
+                android:id="@+id/botonesMenu3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="medico"
-                android:src="@drawable/medico"
                 android:layout_weight=".25"/>
             <ImageButton
+                android:id="@+id/botonesMenu4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="ropa"
-                android:src="@drawable/ropa"
                 android:layout_weight=".25"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/letraBotonesMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -86,42 +83,12 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/txou_normal"
+            android:id="@+id/txou"
             android:layout_width="200dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
             android:src="@drawable/image1"/>
 
-
-
-        <!--      <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
-
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:onClick="juegos"
-                      android:text="a"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:onClick="comida"
-                      android:text="b"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:onClick="medico"
-                      android:text="c"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:onClick="ropa"
-                      android:text="d"/>
-              </LinearLayout>
-
-      -->
     </LinearLayout>
 
 

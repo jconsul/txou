@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         pbarProgreso = (ProgressBar)findViewById(R.id.pbarProgreso);
-        tarea1 = new MiTareaAsincrona();
+        tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
 
     }
@@ -97,18 +97,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void tareaLarga()
-    {
+    {//duerme al thread por un segundo
         try {
             Thread.sleep(1000);
-        } catch(InterruptedException e) {}
+        } catch(InterruptedException e) {e.printStackTrace();}
     }
 
-    private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {
+    private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {//thread
+
         @Override
         protected Boolean doInBackground(Void... params) {
             for(int i=1; i<=5; i++) {
                 tareaLarga();
-                publishProgress(i*1);
+                publishProgress(i);//i*1
                 if(isCancelled())
                     break;
             }
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity
         protected void onPreExecute() {
             pbarProgreso.setMax(5);
             pbarProgreso.setProgress(0);
+
         }
         @Override
         protected void onPostExecute(Boolean result) {
@@ -133,12 +135,14 @@ public class MainActivity extends AppCompatActivity
                 pbarProgreso.setVisibility(View.INVISIBLE);
                 TextView text= (TextView)findViewById(R.id.kargatzen);
                 text.setVisibility(View.INVISIBLE);
+
             }
 
         }
         @Override
         protected void onCancelled() {
             Toast.makeText(MainActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+
         }
     }
 

@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         pbarProgreso = (ProgressBar)findViewById(R.id.pbarProgreso);
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
@@ -95,13 +95,16 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this,MenuActivity.class);
         startActivity(intent);
     }
+
     private void tareaLarga()
     {//duerme al thread por un segundo
         try {
             Thread.sleep(1000);
         } catch(InterruptedException e) {e.printStackTrace();}
     }
+
     private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {//thread
+
         @Override
         protected Boolean doInBackground(Void... params) {
             for(int i=1; i<=5; i++) {

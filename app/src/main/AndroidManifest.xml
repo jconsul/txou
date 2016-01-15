@@ -19,26 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ropa"
-            android:label="@string/title_activity_ropa"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".Comida"
-            android:label="@string/title_activity_comida"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".Juegos"
-            android:label="@string/title_activity_juegos"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".Medico"
-            android:label="@string/title_activity_medico"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" >

@@ -95,12 +95,14 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this,MenuActivity.class);
         startActivity(intent);
     }
+
     private void tareaLarga()
     {
         try {
             Thread.sleep(1000);
         } catch(InterruptedException e) {}
     }
+
     private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {

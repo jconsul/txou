@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".25"/>
         </LinearLayout>
-        <LinearLayout
+<!--        <LinearLayout
             android:id="@+id/letraBotonesMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,13 +81,13 @@
                 android:gravity="center"
                 android:layout_weight=".25"/>
         </LinearLayout>
-
+-->
         <ImageView
-            android:id="@+id/txou"
+            android:id="@+id/txouImagen"
             android:layout_width="200dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:src="@drawable/image1"/>
+            android:src="@drawable/txou_normal"/>
 
     </LinearLayout>
 

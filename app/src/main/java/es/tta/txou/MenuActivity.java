@@ -2,6 +2,7 @@ package es.tta.txou;
 
 import android.content.Intent;
 import android.media.Image;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,6 +30,9 @@ public class MenuActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        cargarMenu();
+
+/*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,20 +41,19 @@ public class MenuActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
+*/
     }
 
     //cargar pantalla del Menu
-    public void cargarMenu(View View)
+    public void cargarMenu()
     {
         //Título
         TextView titulo = (TextView) findViewById(R.id.tituloPagina);
-        titulo.setText("Menua");
+        titulo.setText("Menua!");
 
         //Botones:
 
-        LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
+        //LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
 
         ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
         btn1.setImageResource(R.drawable.juegos);
@@ -85,7 +88,8 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         //Añadir imagen de Txou:
-        ImageView image =(ImageView) findViewById(R.id.txou);
+        ImageView image =(ImageView) findViewById(R.id.txouImagen);
+        image.setImageResource(R.drawable.txou_normal);
 
 
     }
@@ -93,47 +97,58 @@ public class MenuActivity extends AppCompatActivity {
     {
         //Título
         TextView titulo = (TextView) findViewById(R.id.tituloPagina);
-        titulo.setText("Menua");
+        titulo.setText("Arropa");
 
         //Botones:
 
-        LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
+        //LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
+
 
         ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
-        btn1.setImageResource(R.drawable.juegos);
+        btn1.setImageResource(R.drawable.guantes);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Primer boton", Toast.LENGTH_SHORT).show();
+                ElegirRopa.cambiarRopa(0);
+                ImageView image =(ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(ElegirRopa.elegirImagen());
+
+
+
             }
         });
 
         ImageButton btn2 = (ImageButton) findViewById(R.id.botonesMenu2);
-        btn2.setImageResource(R.drawable.comida);
+        btn2.setImageResource(R.drawable.falda);
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Segundo boton", Toast.LENGTH_SHORT).show();
+                ElegirRopa.cambiarRopa(1);
+                ImageView image =(ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(ElegirRopa.elegirImagen());
             }
         });
 
         ImageButton btn3 = (ImageButton) findViewById(R.id.botonesMenu3);
-        btn3.setImageResource(R.drawable.medico);
+        btn3.setImageResource(R.drawable.pantalon);
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Tercer boton", Toast.LENGTH_SHORT).show();
+                ElegirRopa.cambiarRopa(2);
+                ImageView image =(ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(ElegirRopa.elegirImagen());
+
             }
         });
 
         ImageButton btn4 = (ImageButton) findViewById(R.id.botonesMenu4);
-        btn4.setImageResource(R.drawable.ropa);
+        btn4.setImageResource(R.drawable.bufanda);
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Cuarto boton", Toast.LENGTH_SHORT).show();
+                ElegirRopa.cambiarRopa(3);
+                ImageView image =(ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(ElegirRopa.elegirImagen());
             }
         });
 
     }
-
-
 
 
 }

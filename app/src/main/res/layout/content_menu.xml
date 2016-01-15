@@ -81,6 +81,34 @@
                 android:gravity="center"
                 android:layout_weight=".25"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/egoeraGosea"
+                android:layout_width="wrap_content"
+                android:layout_height="200px"
+                android:layout_weight=".30"
+                android:visibility="invisible"
+                android:src="@drawable/bokadillo_gosea"/>
+            <ImageView
+                android:id="@+id/egoeraMina"
+                android:layout_width="wrap_content"
+                android:layout_height="200px"
+                android:layout_weight=".30"
+                android:visibility="invisible"
+                android:src="@drawable/bokadillo_mina"/>
+            <ImageView
+                android:id="@+id/egoeraAspertu"
+                android:layout_width="wrap_content"
+                android:layout_height="200px"
+                android:layout_weight=".30"
+                android:visibility="invisible"
+                android:src="@drawable/bokadillo_aspertu"/>
+            </LinearLayout>
 
         <ImageView
             android:id="@+id/txou"

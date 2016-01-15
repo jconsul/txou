@@ -9,5 +9,11 @@
     <string name="title_activity_juegos">Juegos</string>
     <string name="title_activity_medico">Medico</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_joko">JokoActivity</string>
+    <string name="title_activity_jokoak">JokoakActivity</string>
+    <string name="title_activity_esaerak">EsaerakActivity</string>
+    <string name="title_activity_asmakizunak">AsmakizunakActivity</string>
+    <string name="title_activity_ahorkatua">AhorkatuaActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
 
 </resources>

@@ -22,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;
     private int gosea,aspertu,mina,i;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,8 @@ public class MenuActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
+        cargarMenu();
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +47,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     //cargar pantalla del Menu
-    public void cargarMenu(View View)
+    public void cargarMenu()
     {
         //Título
         TextView titulo = (TextView) findViewById(R.id.tituloPagina);
@@ -58,7 +61,10 @@ public class MenuActivity extends AppCompatActivity {
         btn1.setImageResource(R.drawable.juegos);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Primer boton", Toast.LENGTH_SHORT).show();
+                Intent myIntent = new Intent(MenuActivity.this, JokoakActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+
+                //Toast.makeText(getApplicationContext(), "Primer boton", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -95,7 +101,7 @@ public class MenuActivity extends AppCompatActivity {
     {
         //Título
         TextView titulo = (TextView) findViewById(R.id.tituloPagina);
-        titulo.setText("Menua");
+        titulo.setText("Arropa");
 
         //Botones:
 
@@ -169,12 +175,30 @@ public class MenuActivity extends AppCompatActivity {
             aspertu++;
             mina++;
             if(mina>10)
-                Toast.makeText(MenuActivity.this, "Mina", Toast.LENGTH_SHORT).show();//activar imagen mina
+                mina();
+                //minaI.setVisibility(View.VISIBLE);
+               // Toast.makeText(MenuActivity.this, "Mina", Toast.LENGTH_SHORT).show();//activar imagen mina
             if(gosea>5)
-                Toast.makeText(MenuActivity.this, "Gosea", Toast.LENGTH_SHORT).show();//activar imagen gosea
+                gosea();
+                //goseaI.setVisibility(View.VISIBLE);
+                //Toast.makeText(MenuActivity.this, "Gosea", Toast.LENGTH_SHORT).show();//activar imagen gosea
             if(aspertu>12)
-                Toast.makeText(MenuActivity.this, "Aspertu", Toast.LENGTH_SHORT).show();//activar imagen aspertu
+                aspertu();
+                //spertuI.setVisibility(View.VISIBLE);
+                //Toast.makeText(MenuActivity.this, "Aspertu", Toast.LENGTH_SHORT).show();//activar imagen aspertu
 
+        }
+        private void gosea(){
+            ImageView goseaI = (ImageView) findViewById(R.id.egoeraGosea);
+            goseaI.setVisibility(View.VISIBLE);
+        }
+        private void mina(){
+            ImageView minaI = (ImageView) findViewById(R.id.egoeraMina);
+            minaI.setVisibility(View.VISIBLE);
+        }
+        private void aspertu(){
+            ImageView aspertuI = (ImageView) findViewById(R.id.egoeraAspertu);
+            aspertuI.setVisibility(View.VISIBLE);
         }
         @Override
         protected void onPreExecute() {

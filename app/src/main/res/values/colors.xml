@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="fondo">#9acd32</color>
     <color name="letraTitulos">#ffff80</color>
+    <color name="negro">#000000</color>
 
 
 </resources>

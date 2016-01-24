@@ -1,12 +1,9 @@
 package es.tta.txou;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.media.Image;
 import android.media.Image;
-=======
 import android.os.AsyncTask;
->>>>>>> f3353b7e75712e4552f0b76811de06b211fc44ff
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,8 +35,8 @@ public class MenuActivity extends AppCompatActivity {
 
         cargarMenu();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
         cargarMenu();

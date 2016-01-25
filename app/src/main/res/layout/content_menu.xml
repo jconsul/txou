@@ -33,55 +33,25 @@
             <ImageButton
                 android:id="@+id/botonesMenu1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100px"
                 android:layout_weight=".25"/>
             <ImageButton
                 android:id="@+id/botonesMenu2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100px"
                 android:layout_weight=".25"/>
             <ImageButton
                 android:id="@+id/botonesMenu3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100px"
                 android:layout_weight=".25"/>
             <ImageButton
                 android:id="@+id/botonesMenu4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100px"
                 android:layout_weight=".25"/>
         </LinearLayout>
-<!--        <LinearLayout
-            android:id="@+id/letraBotonesMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="      Jokuak      "
-                android:gravity="center"
-                android:layout_weight=".25"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="      Janaria      "
-                android:gravity="center"
-                android:layout_weight=".25"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="      Medikua      "
-                android:gravity="center"
-                android:layout_weight=".25"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="      Arropa      "
-                android:gravity="center"
-                android:layout_weight=".25"/>
-        </LinearLayout>
--->
+
         <LinearLayout
             android:id="@+id/estado"
             android:layout_width="match_parent"
@@ -91,21 +61,21 @@
             <ImageView
                 android:id="@+id/egoeraGosea"
                 android:layout_width="wrap_content"
-                android:layout_height="200px"
+                android:layout_height="150px"
                 android:layout_weight=".30"
                 android:visibility="invisible"
                 android:src="@drawable/bokadillo_gosea"/>
             <ImageView
                 android:id="@+id/egoeraMina"
                 android:layout_width="wrap_content"
-                android:layout_height="200px"
+                android:layout_height="150px"
                 android:layout_weight=".30"
                 android:visibility="invisible"
                 android:src="@drawable/bokadillo_mina"/>
             <ImageView
                 android:id="@+id/egoeraAspertu"
                 android:layout_width="wrap_content"
-                android:layout_height="200px"
+                android:layout_height="150px"
                 android:layout_weight=".30"
                 android:visibility="invisible"
                 android:src="@drawable/bokadillo_aspertu"/>
@@ -118,7 +88,14 @@
             android:layout_height="250dp"
             android:layout_gravity="center"
             android:src="@drawable/txou_normal"/>
-
+<Button
+    android:id="@+id/botonSalir"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:text="Menua"
+    android:visibility="invisible"
+    android:onClick="irAMenu"/>
     </LinearLayout>
 
 

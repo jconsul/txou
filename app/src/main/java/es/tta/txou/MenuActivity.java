@@ -14,6 +14,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;
     private int gosea,aspertu,mina,i;
+    private int fotoDeTxou=R.drawable.txou_normal;
 
 
     @Override
@@ -30,49 +32,27 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
-        cargarMenu();
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
+        fotoDeTxou=ElegirRopa.elegirImagen();
         cargarMenu();
-
-
-/*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
     }
+
 
     //cargar pantalla del Menu
     public void cargarMenu()
     {
         //Título
         TextView titulo = (TextView) findViewById(R.id.tituloPagina);
-        titulo.setText("Menua!");
+        titulo.setText("Menua");
 
         //Botones:
-
-        //LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
-
         ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
         btn1.setImageResource(R.drawable.juegos);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent myIntent = new Intent(MenuActivity.this, JokoakActivity.class);
                 MenuActivity.this.startActivity(myIntent);
-
-                //Toast.makeText(getApplicationContext(), "Primer boton", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -80,7 +60,7 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setImageResource(R.drawable.comida);
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Segundo boton", Toast.LENGTH_SHORT).show();
+                pantallaComida(v);
             }
         });
 
@@ -88,7 +68,7 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setImageResource(R.drawable.medico);
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Tercer boton", Toast.LENGTH_SHORT).show();
+                pantallaMedico(v);
             }
         });
 
@@ -102,10 +82,104 @@ public class MenuActivity extends AppCompatActivity {
 
         //Añadir imagen de Txou:
         ImageView image =(ImageView) findViewById(R.id.txouImagen);
-        image.setImageResource(R.drawable.txou_normal);
+        image.setImageResource(fotoDeTxou);
+        Button volver = (Button) findViewById(R.id.botonSalir);
+        volver.setVisibility(android.view.View.INVISIBLE);
+    }
 
+    public void pantallaMedico(View View)
+    {
+        //Título
+        TextView titulo = (TextView) findViewById(R.id.tituloPagina);
+        titulo.setText("Medikua");
+
+        //Botones:
+        ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
+        btn1.setImageResource(R.drawable.pirula);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mina=20;
+            }
+        });
+
+        ImageButton btn2 = (ImageButton) findViewById(R.id.botonesMenu2);
+        btn2.setImageResource(R.drawable.termometroa);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mina=20;
+            }
+        });
+
+        ImageButton btn3 = (ImageButton) findViewById(R.id.botonesMenu3);
+        btn3.setImageResource(R.drawable.kamomila);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mina=20;
+            }
+        });
+
+
+        ImageButton btn4 = (ImageButton) findViewById(R.id.botonesMenu4);
+        btn4.setImageResource(R.drawable.tirita);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mina=20;
+            }
+        });
+
+        ImageView image =(ImageView) findViewById(R.id.txouImagen);
+        image.setImageResource(fotoDeTxou);
+        hacerVisible();
 
     }
+
+    public void pantallaComida(View View)
+    {
+        //Título
+        TextView titulo = (TextView) findViewById(R.id.tituloPagina);
+        titulo.setText("Janaria");
+
+        //Botones:
+        ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
+        btn1.setImageResource(R.drawable.leche);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gosea=0;
+            }
+        });
+
+        ImageButton btn2 = (ImageButton) findViewById(R.id.botonesMenu2);
+        btn2.setImageResource(R.drawable.carne);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gosea=0;
+            }
+        });
+
+        ImageButton btn3 = (ImageButton) findViewById(R.id.botonesMenu3);
+        btn3.setImageResource(R.drawable.manzana);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gosea=0;
+            }
+        });
+
+
+        ImageButton btn4 = (ImageButton) findViewById(R.id.botonesMenu4);
+        btn4.setImageResource(R.drawable.yogur);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gosea=0;
+            }
+        });
+
+        //Imagen de Txou:
+        ImageView image =(ImageView) findViewById(R.id.txouImagen);
+        image.setImageResource(fotoDeTxou);
+        hacerVisible();
+    }
+
+
     public void pantallaRopa(View View)
     {
         //Título
@@ -113,18 +187,14 @@ public class MenuActivity extends AppCompatActivity {
         titulo.setText("Arropa");
 
         //Botones:
-
-        //LinearLayout layoutBotones = (LinearLayout) findViewById(R.id.botonesMenu);
-
-
         ImageButton btn1 = (ImageButton) findViewById(R.id.botonesMenu1);
         btn1.setImageResource(R.drawable.guantes);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ElegirRopa.cambiarRopa(0);
+                fotoDeTxou=ElegirRopa.elegirImagen();
                 ImageView image =(ImageView) findViewById(R.id.txouImagen);
-                image.setImageResource(ElegirRopa.elegirImagen());
-
+                image.setImageResource(fotoDeTxou);
 
 
             }
@@ -135,8 +205,9 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ElegirRopa.cambiarRopa(1);
+                fotoDeTxou=ElegirRopa.elegirImagen();
                 ImageView image =(ImageView) findViewById(R.id.txouImagen);
-                image.setImageResource(ElegirRopa.elegirImagen());
+                image.setImageResource(fotoDeTxou);
             }
         });
 
@@ -145,8 +216,9 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ElegirRopa.cambiarRopa(2);
-                ImageView image =(ImageView) findViewById(R.id.txouImagen);
-                image.setImageResource(ElegirRopa.elegirImagen());
+                fotoDeTxou = ElegirRopa.elegirImagen();
+                ImageView image = (ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(fotoDeTxou);
 
             }
         });
@@ -156,24 +228,37 @@ public class MenuActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ElegirRopa.cambiarRopa(3);
-                ImageView image =(ImageView) findViewById(R.id.txouImagen);
-                image.setImageResource(ElegirRopa.elegirImagen());
+                fotoDeTxou = ElegirRopa.elegirImagen();
+                ImageView image = (ImageView) findViewById(R.id.txouImagen);
+                image.setImageResource(fotoDeTxou);
+            }
+        });
+
+        hacerVisible();
+        //ImageView image =(ImageView) findViewById(R.id.txouImagen);
+        //image.setImageResource(fotoDeTxou);
+
+    }
+
+    public void hacerVisible()
+    {
+        Button volver = (Button) findViewById(R.id.botonSalir);
+        volver.setVisibility(android.view.View.VISIBLE);
+        volver.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                cargarMenu();
             }
         });
 
     }
+
     private void tareaLarga()
     {
         try {
             Thread.sleep(1000);
         } catch(InterruptedException e) {e.printStackTrace();}
     }
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-// Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }*/
+
     private class MiTareaAsincrona extends AsyncTask<Void, Integer, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {

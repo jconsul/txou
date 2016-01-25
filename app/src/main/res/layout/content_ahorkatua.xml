@@ -59,6 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="A"
                         android:text="A"
                         android:onClick="juego"/>
                     <Button
@@ -66,6 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="B"
                         android:text="B"
                         android:onClick="juego"/>
                     <Button
@@ -73,6 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="C"
                         android:text="C"
                         android:onClick="juego"/>
                     <Button
@@ -80,6 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="D"
                         android:text="D"
                         android:onClick="juego"/>
                     <Button
@@ -87,6 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="E"
                         android:text="E"
                         android:onClick="juego"/>
                     <Button
@@ -94,6 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
+                        android:tag="F"
                         android:text="F"
                         android:onClick="juego"/>
                 </LinearLayout>
@@ -108,37 +114,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="G" />
+                    android:tag="G"
+                    android:text="G"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="H"/>
+                    android:tag="H"
+                    android:text="H"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="I"/>
+                    android:tag="I"
+                    android:text="I"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="J"/>
+                    android:tag="J"
+                    android:text="J"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonK"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="K"/>
+                    android:tag="K"
+                    android:text="K"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="L"/>
+                    android:tag="L"
+                    android:text="L"
+                    android:onClick="juego"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/letrasFila3"
@@ -151,37 +169,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="M"/>
+                    android:tag="H"
+                    android:text="M"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="N"/>
+                    android:tag="N"
+                    android:text="N"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="O"/>
+                    android:tag="O"
+                    android:text="O"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="P"/>
+                    android:tag="P"
+                    android:text="P"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonQ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="Q"/>
+                    android:tag="Q"
+                    android:text="Q"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="R"/>
+                    android:tag="R"
+                    android:text="R"
+                    android:onClick="juego"/>
             </LinearLayout>
 
             <LinearLayout
@@ -195,37 +225,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="S"/>
+                    android:tag="S"
+                    android:text="S"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="T"/>
+                    android:tag="T"
+                    android:text="T"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonU"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="U"/>
+                    android:tag="U"
+                    android:text="U"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="V"/>
+                    android:tag="V"
+                    android:text="V"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonW"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="W"/>
+                    android:tag="W"
+                    android:text="W"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonX"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="X"/>
+                    android:tag="X"
+                    android:text="X"
+                    android:onClick="juego"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/letrasFila5"
@@ -238,13 +280,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="Y"/>
+                    android:tag="Y"
+                    android:text="Y"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonZ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
-                    android:text="Z"/>
+                    android:tag="Z"
+                    android:text="Z"
+                    android:onClick="juego"/>
                 <Button
                     android:id="@+id/botonIRTEN"
                     android:layout_width="wrap_content"
@@ -256,6 +302,12 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/esandakoLetrak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 

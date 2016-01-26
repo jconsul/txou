@@ -1,5 +1,6 @@
 package es.tta.txou;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,16 +17,16 @@ import android.widget.VideoView;
 public class VideoActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-
         showVideo();
-
     }
 
     public void showVideo(){
         VideoView video = new VideoView(this);
+        //video.setVideoURI(Uri.parse("“rtsp://v4.cache3.c youtube.com/CjYLENy73wIaLQlW_ji2apr6AxMYDSANFEIJbXYtZ29vZ2xlSARSBXdhdGNoYOr_86Xm06e5UAw=/0/0/0/video.3gp"));
         video.setVideoURI(Uri.parse("http://techslides.com/demos/sample-videos/small.mp4"));
         ViewGroup.LayoutParams params =new ViewGroup.LayoutParams( ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         video.setLayoutParams(params);

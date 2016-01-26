@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,20 +24,26 @@ import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;
-    private int gosea,aspertu,mina,i;
+    private int i;
+    boolean a=true;
     private int fotoDeTxou=R.drawable.txou_normal;
-
+    Egoera egoera= new Egoera();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
         fotoDeTxou=ElegirRopa.elegirImagen();
         cargarMenu();
     }
+    @Override
+    public void onBackPressed() {
+        tarea1.cancel(true);
+        moveTaskToBack(true);
+    }
+
 
 
     //cargar pantalla del Menu
@@ -51,8 +58,14 @@ public class MenuActivity extends AppCompatActivity {
         btn1.setImageResource(R.drawable.juegos);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //a=false;
+                egoera.resetAspertu();
+                tarea1.cancel(true);
                 Intent myIntent = new Intent(MenuActivity.this, JokoakActivity.class);
                 MenuActivity.this.startActivity(myIntent);
+
+
+
             }
         });
 
@@ -98,7 +111,7 @@ public class MenuActivity extends AppCompatActivity {
         btn1.setImageResource(R.drawable.pirula);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mina=20;
+                egoera.resetMina();
             }
         });
 
@@ -106,7 +119,7 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setImageResource(R.drawable.termometroa);
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mina=20;
+                egoera.resetMina();
             }
         });
 
@@ -114,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setImageResource(R.drawable.kamomila);
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mina=20;
+                egoera.resetMina();
             }
         });
 
@@ -123,7 +136,7 @@ public class MenuActivity extends AppCompatActivity {
         btn4.setImageResource(R.drawable.tirita);
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mina=20;
+                egoera.resetMina();
             }
         });
 
@@ -144,7 +157,7 @@ public class MenuActivity extends AppCompatActivity {
         btn1.setImageResource(R.drawable.leche);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                gosea=0;
+                egoera.resetGosea();
             }
         });
 
@@ -152,7 +165,7 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setImageResource(R.drawable.carne);
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                gosea=0;
+                egoera.resetGosea();
             }
         });
 
@@ -160,7 +173,7 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setImageResource(R.drawable.manzana);
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                gosea=0;
+                egoera.resetGosea();
             }
         });
 
@@ -169,7 +182,7 @@ public class MenuActivity extends AppCompatActivity {
         btn4.setImageResource(R.drawable.yogur);
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                gosea=0;
+                egoera.resetGosea();
             }
         });
 
@@ -265,11 +278,10 @@ public class MenuActivity extends AppCompatActivity {
             while(true) {
                 tareaLarga();
                 publishProgress(i);
+                egoera.gehituEgoera();
                 i++;
                 if(isCancelled()){
-                    gosea=0;
-                    aspertu=0;
-                    mina=0;
+
                     break;
                 }
 
@@ -278,58 +290,36 @@ public class MenuActivity extends AppCompatActivity {
         }
         @Override
         protected void onProgressUpdate(Integer... i) {
-            gosea++;
-            aspertu++;
-            mina++;
-            if(mina>10)
-                mina();
-                //minaI.setVisibility(View.VISIBLE);
-               // Toast.makeText(MenuActivity.this, "Mina", Toast.LENGTH_SHORT).show();//activar imagen mina
-            if(gosea>5)
-                gosea();
-                //goseaI.setVisibility(View.VISIBLE);
-                //Toast.makeText(MenuActivity.this, "Gosea", Toast.LENGTH_SHORT).show();//activar imagen gosea
-            if(aspertu>12)
-                aspertu();
-                //spertuI.setVisibility(View.VISIBLE);
-                //Toast.makeText(MenuActivity.this, "Aspertu", Toast.LENGTH_SHORT).show();//activar imagen aspertu
-
-        }
-        private void gosea(){
-            ImageView goseaI = (ImageView) findViewById(R.id.egoeraGosea);
-            goseaI.setVisibility(View.VISIBLE);
-        }
-        private void mina(){
             ImageView minaI = (ImageView) findViewById(R.id.egoeraMina);
-            minaI.setVisibility(View.VISIBLE);
-        }
-        private void aspertu(){
+            ImageView goseaI = (ImageView) findViewById(R.id.egoeraGosea);
             ImageView aspertuI = (ImageView) findViewById(R.id.egoeraAspertu);
-            aspertuI.setVisibility(View.VISIBLE);
+            if(egoera.getEgoera()[0])
+                minaI.setVisibility(View.VISIBLE);
+            else
+                minaI.setVisibility(View.INVISIBLE);
+            if(egoera.getEgoera()[1])
+                goseaI.setVisibility(View.VISIBLE);
+            else
+                goseaI.setVisibility(View.INVISIBLE);
+            if(egoera.getEgoera()[2])
+                aspertuI.setVisibility(View.VISIBLE);
+            else
+                aspertuI.setVisibility(View.INVISIBLE);
         }
         @Override
         protected void onPreExecute() {
-            gosea=0;
-            aspertu=0;
-            mina=0;
-            i=0;
+
         }
         @Override
         protected void onPostExecute(Boolean result) {
-            if(result)
-            Toast.makeText(MenuActivity.this, "Tarea finalizada!", Toast.LENGTH_SHORT).show();
-            gosea=0;
-            aspertu=0;
-            mina=0;
-            tarea1.cancel(true);
+           // if(result)
+            //Toast.makeText(MenuActivity.this, "Tarea finalizada!", Toast.LENGTH_SHORT).show();
+
         }
         @Override
         protected void onCancelled() {
-            Toast.makeText(MenuActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
-            gosea=0;
-            aspertu=0;
-            mina=0;
-            tarea1.cancel(true);
+           // Toast.makeText(MenuActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+
         }
     }
 

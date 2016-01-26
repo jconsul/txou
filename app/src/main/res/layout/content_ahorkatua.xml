@@ -291,13 +291,23 @@
                     android:tag="Z"
                     android:text="Z"
                     android:onClick="juego"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:src="@android:drawable/stat_notify_sync_noanim"
+                    android:onClick="inicio"/>
+
                 <Button
                     android:id="@+id/botonIRTEN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".60"
-                    android:text="Irten"
+                    android:layout_weight=".15"
+                    android:text="IRTEN"
                     android:onClick="salir"/>
+
+
 
             </LinearLayout>
 
@@ -310,14 +320,5 @@
             />
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 </RelativeLayout>

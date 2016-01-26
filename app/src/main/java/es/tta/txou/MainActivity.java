@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
 
         //añadir saludo
         TextView text= (TextView)findViewById(R.id.agurra);
-        text.setText("Kaixo ni Txou naiz");
+        text.setText(R.string.saludo);
 
         //Dibujar Txou:
         ImageView imagen=(ImageView)findViewById(R.id.txou_normal);

@@ -16,4 +16,9 @@
     <string name="title_activity_ahorkatua">AhorkatuaActivity</string>
     <string name="title_activity_video">VideoActivity</string>
 
+    <string name="juegos">Aukeratu nahi duzun jokoa:</string>
+    <string name="saludo">Kaixo lagunak! Nire izena Txou da eta nire historia Bermeon hasten da. Bost anaietatik txikiena naiz, eta koralen eta txirlen artean igeri egitea gustoko dut. Arrain polit polita nauzue, bakailao, hain zuzen. Hemen ez ditut lagun askorik eta nire anaiek ez dute nirekin jolastu nahi oso txikia naizelako. Nire laguna izan nahi duzu?"
+</string>
+
+
 </resources>

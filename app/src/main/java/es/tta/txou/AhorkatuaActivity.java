@@ -15,16 +15,13 @@ import android.widget.Toast;
 
 public class AhorkatuaActivity extends AppCompatActivity {
 
-    String palabras[] = {"ZENBAKI", "LAINO","EKIPOA", "EGUZKIA", "EURIA", "XAGUA"} ;
-    String dichas="";
+    String palabras[] = {"XAGU", "LAINO","EKIPOA", "EGUZKIA", "EURIA", "ZENBAKI"} ;
     public String palabra;
     public int fallos=0;
+    public int aciertos=0;
     public int maxFallos=6;
-    public int longitudPalabra;
     public String guiones="";
-    public String guiones1="";
     public String esandakoLetrak="";
-    //public char[] guiones=new char[30];
 
 
     @Override
@@ -32,21 +29,28 @@ public class AhorkatuaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ahorkatua);
 
-        inicio();
+        inicio(new View(this));
     }
 
-    public void inicio()
+    public void inicio(View v)
     {
+        //inicializar valores:
+        palabra="";
+        fallos=0;
+        maxFallos=6;
+        esandakoLetrak="";
+        guiones="";
+        aciertos=0;
+        String esandakoLetrak="";
+        visualizarImagen();
+
+
         //elegimos una palabra:
-        int n= (int) (Math.random()*6+1);
+        int n= (int) (Math.random()*5+1);
         palabra=palabras[n];
 
         //pintamos los guiones:
-        longitudPalabra=palabra.length();
-
-
-
-        for(int i=0;i<longitudPalabra;i++)
+        for(int i=0;i<palabra.length();i++)
         {
             guiones=guiones+"_ ";
         }
@@ -57,57 +61,63 @@ public class AhorkatuaActivity extends AppCompatActivity {
         t.setText(guiones);
         TextView t1 = (TextView) findViewById(R.id.esandakoLetrak);
         t1.setText("ESANDAKO LETRAK: ");
-
-        fallos=0;
     }
 
     public void juego(View v)
     {
         String  letra= (String) v.getTag();
+        String guiones1;
 
-        if(palabra.contains(letra))
+        //String boton="R.id.boton"+letra;
+        //Toast.makeText(AhorkatuaActivity.this, boton, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(AhorkatuaActivity.this, "aa=%d"+Integer.parseInt(boton), Toast.LENGTH_SHORT).show();
+        //Button b = (Button) findViewById(Integer.parseInt(boton));
+        //b.setClickable(false);
+
+
+        if (fallos==maxFallos)
         {
-            //ver donde está posicion
-            int pos = palabra.indexOf(letra);
-            //cambiar en el array
+            Toast.makeText(AhorkatuaActivity.this, "PARTIDA AMAITU DUZU", Toast.LENGTH_SHORT).show();
+        }
+        else if (aciertos==palabra.length())
+        Toast.makeText(AhorkatuaActivity.this, "ZORIONAK! ASMATU EGIN DUZU =)", Toast.LENGTH_SHORT).show();
 
-            for(int i=0;i<guiones.length();i++)
-            {
-                if(i==2*pos && guiones.charAt(i)=='_')
-                {
-                    guiones1=guiones1+letra+" ";
-                }
-                else
-                {
-                    if(guiones.charAt(i)=='_')
-                    {
-                        guiones1=guiones1+"_ ";
+        else if(esandakoLetrak.contains(letra) || guiones.contains(letra))
+        {
+            Toast.makeText(AhorkatuaActivity.this, "beste batekin saiatu", Toast.LENGTH_SHORT).show();
 
-                    }
-                }
-                guiones=guiones1;
-                guiones1="";
-
-            }
-
-            //recargar los guiones
-            TextView t = (TextView) findViewById(R.id.palabra);
-            Toast.makeText(AhorkatuaActivity.this, "esta es la letra que coges: "+letra.charAt(0), Toast.LENGTH_SHORT).show();
-            t.setText(guiones);
         }
         else
         {
-            fallos++;
-            TextView t1 = (TextView) findViewById(R.id.esandakoLetrak);
-            esandakoLetrak=esandakoLetrak+", "+letra;
-            t1.setText("ESANDAKO LETRAK: " + esandakoLetrak);
-            if (fallos==maxFallos)
-            {
-                t1.setText("partida amaitu duzu.");
+            if (palabra.contains(letra)) {
+                //ver donde está posicion
+                int pos = palabra.indexOf(letra);
+                guiones1 = "";
+
+                if (guiones.charAt(2 * pos) == '_') {
+                    guiones1 = guiones.substring(0, 2 * pos);
+                    guiones1 = guiones1 + letra;
+                    guiones1 = guiones1 + guiones.substring(2 * pos + 1, guiones.length());
+                    guiones = guiones1;
+                    aciertos++;
+
+                }
+
+            } else {
+                fallos++;
+                TextView t1 = (TextView) findViewById(R.id.esandakoLetrak);
+                esandakoLetrak = esandakoLetrak + "  " + letra;
+                t1.setText("ESANDAKO LETRAK: " + esandakoLetrak);
+                if (fallos == maxFallos) {
+                    Toast.makeText(AhorkatuaActivity.this, "PARTIDA AMAITU DUZU", Toast.LENGTH_SHORT).show();
+                }
             }
         }
-
+        TextView t = (TextView) findViewById(R.id.palabra);
+        t.setText(guiones);
         visualizarImagen();
+        if (aciertos==palabra.length())
+            Toast.makeText(AhorkatuaActivity.this, "ZORIIONAK! ASMATU EGIN DUZU =)", Toast.LENGTH_SHORT).show();
 
     }
 

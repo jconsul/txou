@@ -6,9 +6,9 @@ package es.tta.txou;
 public class Choice {
     private int id;
     private String erantzuna;
-    private boolean zuzena;
+    private int zuzena;
 
-    public Choice(int id, String erantzuna, boolean zuzena){
+    public Choice(int id, String erantzuna, int zuzena){
         this.id=id;
         this.erantzuna=erantzuna;
         this.zuzena=zuzena;
@@ -19,7 +19,7 @@ public class Choice {
     public String getErantzuna(){
         return erantzuna;
     }
-    public boolean getZuzena(){
+    public int getZuzena(){
         return zuzena;
     }
     public void setId(int id){
@@ -28,7 +28,7 @@ public class Choice {
     public void setErantzuna(String erantzuna){
         this.erantzuna=erantzuna;
     }
-    public void setZuzena(boolean zuzena){
+    public void setZuzena(int zuzena){
         this.zuzena=zuzena;
     }
 }

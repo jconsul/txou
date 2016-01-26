@@ -15,5 +15,6 @@
     <string name="title_activity_asmakizunak">AsmakizunakActivity</string>
     <string name="title_activity_ahorkatua">AhorkatuaActivity</string>
     <string name="title_activity_video">VideoActivity</string>
+    <string name="button_send">Bidali</string>
 
 </resources>

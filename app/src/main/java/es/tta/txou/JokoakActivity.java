@@ -14,21 +14,21 @@ public class JokoakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokoak);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
+
+    public void irAMenu(View view)
+    {
+        Intent intent= new Intent(this, MenuActivity.class);
+        startActivity(intent);
+
+    }
+
     public void esaerak(View view){
         Intent intent= new Intent(this, EsaerakActivity.class);
         startActivity(intent);
+
     }
     public void asmakizunak(View view){
         Intent intent= new Intent(this, AsmakizunakActivity.class);
@@ -42,6 +42,7 @@ public class JokoakActivity extends AppCompatActivity {
         Intent intent= new Intent(this, VideoActivity.class);
         startActivity(intent);
     }
+
 
 
 

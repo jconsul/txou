@@ -2,6 +2,8 @@ package es.tta.txou;
 
 import org.junit.Test;
 
+import es.tta.txou.modelo.Test;
+
 import static org.junit.Assert.*;
 
 /**

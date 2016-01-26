@@ -27,23 +27,23 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".JokoakActivity"
+            android:name=".vista.JokoakActivity"
             android:label="@string/title_activity_jokoak"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EsaerakActivity"
+            android:name=".vista.EsaerakActivity"
             android:label="@string/title_activity_esaerak"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AsmakizunakActivity"
+            android:name=".vista.AsmakizunakActivity"
             android:label="@string/title_activity_asmakizunak"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AhorkatuaActivity"
+            android:name=".vista.AhorkatuaActivity"
             android:label="@string/title_activity_ahorkatua"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".VideoActivity"
+            android:name=".vista.VideoActivity"
             android:label="@string/title_activity_video"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.presentador;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -6,6 +6,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import es.tta.txou.modelo.Choice;
+import es.tta.txou.modelo.RestClient;
+import es.tta.txou.modelo.Test;
+import es.tta.txou.modelo.Asmakizun;
+import es.tta.txou.modelo.Esaera;
 
 /**
  * Created by jon on 24/01/16.

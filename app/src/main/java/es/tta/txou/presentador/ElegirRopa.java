@@ -1,4 +1,6 @@
-package es.tta.txou;
+package es.tta.txou.presentador;
+
+import es.tta.txou.R;
 
 /**
  * Created by jone on 14/01/16.
@@ -49,7 +51,7 @@ public class ElegirRopa
     public static int elegirImagen()
     {
         int cont=0;
-        int devolver=R.drawable.txou_normal;
+        int devolver= R.drawable.txou_normal;
         for(int i=0;i<ropa.length;i++)
         {
             if(ropa[i])

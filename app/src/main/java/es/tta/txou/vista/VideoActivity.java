@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.vista;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import es.tta.txou.R;
 
 public class VideoActivity extends AppCompatActivity {
 

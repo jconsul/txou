@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.vista;
 
 import android.app.ProgressDialog;
 import android.content.Context;

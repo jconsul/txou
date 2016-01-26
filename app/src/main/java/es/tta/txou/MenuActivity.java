@@ -1,26 +1,18 @@
 package es.tta.txou;
 
 import android.content.Intent;
-import android.media.Image;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.Layout;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import es.tta.txou.presentador.Egoera;
+import es.tta.txou.presentador.ElegirRopa;
+import es.tta.txou.vista.JokoakActivity;
 
 public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;
@@ -35,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         tarea1 = new MiTareaAsincrona();// inicia el timer en el thread
         tarea1.execute();
-        fotoDeTxou=ElegirRopa.elegirImagen();
+        fotoDeTxou= ElegirRopa.elegirImagen();
         cargarMenu();
     }
     @Override
@@ -63,9 +55,6 @@ public class MenuActivity extends AppCompatActivity {
                 tarea1.cancel(true);
                 Intent myIntent = new Intent(MenuActivity.this, JokoakActivity.class);
                 MenuActivity.this.startActivity(myIntent);
-
-
-
             }
         });
 

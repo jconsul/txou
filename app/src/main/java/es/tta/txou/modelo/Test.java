@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.modelo;
 
 import java.util.ArrayList;
 

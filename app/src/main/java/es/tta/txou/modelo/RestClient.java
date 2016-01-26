@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.modelo;
 import android.util.Base64;
 
 import org.json.JSONException;

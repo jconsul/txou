@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.modelo;
 
 /**
  * Created by jon on 15/01/16.

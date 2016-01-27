@@ -18,30 +18,14 @@ import java.util.Map;
  * Created by jon on 13/01/16.
  */
 public class RestClient {
-    //private final static String AUTH="Authorization";
+
     private final String baseURL;
     private final Map<String,String> properties= new HashMap<>();
     public RestClient(String baseURL){
         this.baseURL=baseURL;
 
     }
-    /*public void setHttpBasicAuth(String user, String passwd){
-        String basicAuth= Base64.encodeToString(String.format("%s:%s",user,passwd).getBytes(),Base64.DEFAULT);
-        properties.put(AUTH,String.format("Basic %s",basicAuth));
 
-    }
-    public String getAuthorization(){
-        return properties.get(AUTH);
-
-    }
-    public void setAuthorization(String auth){
-        properties.put(AUTH,auth);
-
-    }
-    public void setProperty(String name, String value){
-        properties.put(name, value);
-
-    }*/
     private HttpURLConnection getConnection(String path) throws IOException{
 
         URL url = new URL(String.format("%s/%s",baseURL,path));
@@ -65,9 +49,7 @@ public class RestClient {
                 conn.disconnect();
         }
     }
-    public JSONObject getJson (String path) throws IOException, JSONException {
-        return new JSONObject(getString(path));
-    }
+
 
 
 }

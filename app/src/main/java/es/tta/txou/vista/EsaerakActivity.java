@@ -50,8 +50,7 @@ public class EsaerakActivity extends AppCompatActivity {
         }.start();
 
 
-        //Esaera esaera= data.getEsaera();
-    //esa1(esaera);
+
 
 
     }
@@ -65,8 +64,7 @@ public class EsaerakActivity extends AppCompatActivity {
             RadioButton radio = new RadioButton(this);
             radio.setText(choice.getErantzuna());
             correct=choice.getZuzena();
-            //Intent myIntent = new Intent(EsaerakActivity.this, JokoakActivity.class);
-            //radio.setOnClickListener(EsaerakActivity.this.startActivity(myIntent));//AsmakizunakActivity.this.startActivity(myIntent)
+
             group.addView(radio);
         }
         Button bidali= (Button)findViewById(R.id.buttonBidali);
@@ -81,10 +79,10 @@ public class EsaerakActivity extends AppCompatActivity {
                 group.getChildAt(2).setBackgroundColor(Color.TRANSPARENT);
                 if(selected!=correct){
                     group.getChildAt(selected).setBackgroundColor(Color.RED);
-                    Toast.makeText(getApplicationContext(), "Has fallado", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this, "Erantzun Okerra", Toast.LENGTH_SHORT).show();
                 }else{
                     group.getChildAt(selected).setBackgroundColor(Color.GREEN);
-                    Toast.makeText(getApplicationContext(),"Correcto!", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this,"Erantzun Zuzena!", Toast.LENGTH_SHORT).show();
             }
 
             }
@@ -94,9 +92,7 @@ public class EsaerakActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RadioGroup group = (RadioGroup) findViewById(R.id.test_choices);
                 group.removeAllViews();
-                //for(Choice choice : esaera.getChoices1()){
-                //    group.removeAllViews();
-                //}
+
                 esa2(esaera);
 
             }
@@ -113,8 +109,7 @@ public class EsaerakActivity extends AppCompatActivity {
             RadioButton radio = new RadioButton(this);
             radio.setText(choice.getErantzuna());
             correct=choice.getZuzena();
-            //Intent myIntent = new Intent(EsaerakActivity.this, JokoakActivity.class);
-            //radio.setOnClickListener(EsaerakActivity.this.startActivity(myIntent));//AsmakizunakActivity.this.startActivity(myIntent)
+
             group.addView(radio);
         }
         Button bidali= (Button)findViewById(R.id.buttonBidali);
@@ -129,10 +124,10 @@ public class EsaerakActivity extends AppCompatActivity {
                 group.getChildAt(2).setBackgroundColor(Color.TRANSPARENT);
                 if(selected!=correct){
                     group.getChildAt(selected).setBackgroundColor(Color.RED);
-                    Toast.makeText(getApplicationContext(), "Has fallado", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this, "Erantzun Okerra", Toast.LENGTH_SHORT).show();
                 }else{
                     group.getChildAt(selected).setBackgroundColor(Color.GREEN);
-                    Toast.makeText(getApplicationContext(),"Correcto!", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this,"Erantzun Zuzena!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -142,9 +137,7 @@ public class EsaerakActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RadioGroup group = (RadioGroup)findViewById(R.id.test_choices);
                 group.removeAllViews();
-                //for(Choice choice : esaera.getChoices2()){
-                //    group.removeAllViews();
-                //}
+
                 esa3(esaera);
 
             }
@@ -160,8 +153,7 @@ public class EsaerakActivity extends AppCompatActivity {
             RadioButton radio = new RadioButton(this);
             radio.setText(choice.getErantzuna());
             correct=choice.getZuzena();
-            //Intent myIntent = new Intent(EsaerakActivity.this, JokoakActivity.class);
-            //radio.setOnClickListener(EsaerakActivity.this.startActivity(myIntent));//AsmakizunakActivity.this.startActivity(myIntent)
+
             group.addView(radio);
         }
         Button bidali= (Button)findViewById(R.id.buttonBidali);
@@ -176,10 +168,10 @@ public class EsaerakActivity extends AppCompatActivity {
                 group.getChildAt(2).setBackgroundColor(Color.TRANSPARENT);
                 if(selected!=correct){
                     group.getChildAt(selected).setBackgroundColor(Color.RED);
-                    Toast.makeText(getApplicationContext(), "Has fallado", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this, "Erantzun Okerra",Toast.LENGTH_SHORT).show();
                 }else{
                     group.getChildAt(selected).setBackgroundColor(Color.GREEN);
-                    Toast.makeText(getApplicationContext(),"Correcto!", Toast.LENGTH_SHORT);
+                    Toast.makeText(EsaerakActivity.this,"Erantzun Zuzena!",Toast.LENGTH_SHORT).show();
                 }
 
             }

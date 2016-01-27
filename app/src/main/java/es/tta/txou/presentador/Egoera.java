@@ -13,11 +13,11 @@ public class Egoera {
             egoera[0]=true;
         else
             egoera[0]=false;
-        if(gosea>10)
+        if(gosea>5)
             egoera[1]=true;
         else
             egoera[1]=false;
-        if(aspertu>20)
+        if(aspertu>10)
             egoera[2]=true;
         else
             egoera[2]=false;

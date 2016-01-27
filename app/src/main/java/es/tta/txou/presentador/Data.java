@@ -128,28 +128,7 @@ public class Data {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        /*Esaera esaera= new Esaera();
-        esaera.setWording1("1.galdera: zein..");
-        esaera.setWording2("2.galdera: Nola..");
-        esaera.setWording3("3.galdera: Noiz...");*/
-       /* ArrayList<Choice> choices1 = new ArrayList<Choice>();
-        for (int i = 0; i < 3; i++) {
-                       Choice choice = new Choice(i, "respuesta1 "+i,2);
-            choices1.add(choice);
-        }
-        esaera.setChoices1(choices1);
-        ArrayList<Choice> choices2 = new ArrayList<Choice>();
-        for (int i = 0; i < 3; i++) {
-            Choice choice = new Choice(i, "respuesta2 "+i,1);
-            choices2.add(choice);
-        }
-        esaera.setChoices2(choices2);
-        ArrayList<Choice> choices3 = new ArrayList<Choice>();
-        for (int i = 0; i < 3; i++) {
-            Choice choice = new Choice(i, "respuesta3 "+i,0);
-            choices3.add(choice);
-        }
-        esaera.setChoices3(choices3);*/
+
         return esaera;
     }
 

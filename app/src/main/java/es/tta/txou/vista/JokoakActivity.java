@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import es.tta.txou.MenuActivity;
 import es.tta.txou.R;
 
 public class JokoakActivity extends AppCompatActivity {

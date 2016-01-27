@@ -46,11 +46,11 @@ public class AsmakizunakActivity extends AppCompatActivity {
                 String erantzuna=text.getText().toString();
                 Toast.makeText(getApplicationContext(),erantzun,Toast.LENGTH_SHORT);
                 if(erantzun.equalsIgnoreCase(erantzuna)){
-                    Toast.makeText(getApplicationContext(),"Zuzena",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Zuzena",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Okerra",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Okerra",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.RED);
                 }
 
@@ -80,11 +80,11 @@ public class AsmakizunakActivity extends AppCompatActivity {
                 String erantzuna=text.getText().toString();
                 Toast.makeText(getApplicationContext(), erantzun, Toast.LENGTH_SHORT);
                 if(erantzun.equalsIgnoreCase(erantzuna)){
-                    Toast.makeText(getApplicationContext(),"Zuzena",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Zuzena",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Okerra",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Okerra",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.RED);
                 }
 
@@ -114,11 +114,11 @@ public class AsmakizunakActivity extends AppCompatActivity {
                 String erantzuna=text.getText().toString();
                 Toast.makeText(getApplicationContext(), erantzun, Toast.LENGTH_SHORT);
                 if(erantzun.equalsIgnoreCase(erantzuna)){
-                    Toast.makeText(getApplicationContext(),"Zuzena",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Zuzena",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Okerra",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Erantzun Okerra",Toast.LENGTH_SHORT).show();
                     text.setBackgroundColor(Color.RED);
                 }
 

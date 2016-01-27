@@ -1,4 +1,4 @@
-package es.tta.txou;
+package es.tta.txou.vista;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,15 +10,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import es.tta.txou.R;
 import es.tta.txou.presentador.Egoera;
 import es.tta.txou.presentador.ElegirRopa;
-import es.tta.txou.vista.JokoakActivity;
 
 public class MenuActivity extends AppCompatActivity {
     private MiTareaAsincrona tarea1;
     private int i;
     boolean a=true;
-    private int fotoDeTxou=R.drawable.txou_normal;
+    private int fotoDeTxou= R.drawable.txou_normal;
     Egoera egoera= new Egoera();
 
     @Override
@@ -237,8 +237,7 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         hacerVisible();
-        //ImageView image =(ImageView) findViewById(R.id.txouImagen);
-        //image.setImageResource(fotoDeTxou);
+
 
     }
 
@@ -301,13 +300,12 @@ public class MenuActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Boolean result) {
-           // if(result)
-            //Toast.makeText(MenuActivity.this, "Tarea finalizada!", Toast.LENGTH_SHORT).show();
+
 
         }
         @Override
         protected void onCancelled() {
-           // Toast.makeText(MenuActivity.this, "Tarea cancelada!", Toast.LENGTH_SHORT).show();
+
 
         }
     }
